@@ -6,16 +6,16 @@ then
   echo "Push specific tag/release"
 
   # Python 3.6
-  docker push ${DOCKER_REPO}:3.6-${DOCKER_TAG} .
+  docker push ${DOCKER_REPO}:3.6-${DOCKER_TAG}
 
   # Python 3.7
-  docker push ${DOCKER_REPO}:3.7-${DOCKER_TAG} .
+  docker push ${DOCKER_REPO}:3.7-${DOCKER_TAG}
 
   # Python 3.8
-  docker push ${DOCKER_REPO}:3.8-${DOCKER_TAG} .
+  docker push ${DOCKER_REPO}:3.8-${DOCKER_TAG}
 else
   echo "Push latest"
 
   # Python 3.8
-  docker push ${IMAGE_NAME} .
+  docker push ${IMAGE_NAME}
 fi
