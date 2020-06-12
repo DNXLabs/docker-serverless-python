@@ -3,7 +3,7 @@ ARG base_image
 FROM ${base_image}
 
 RUN apt-get update && \
-    apt-get install -y nodejs npm && \
+    apt-get install -y wget unzip nodejs npm && \
     npm install -g serverless
 
 ADD requirements.txt /root/
