@@ -1,6 +1,4 @@
-FROM python:3.8-slim
-
-ADD requirements.txt /root/
+FROM python:3.6-slim
 
 RUN apt-get update && \
     apt-get install --no-install-recommends -y \

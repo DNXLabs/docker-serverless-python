@@ -1,7 +1,5 @@
 FROM python:3.8-slim
 
-ADD requirements.txt /root/
-
 RUN apt-get update && \
     apt-get install --no-install-recommends -y \
         wget=1.20.1-1.1 \
