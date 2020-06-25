@@ -3,6 +3,7 @@ FROM python:3.6-slim
 RUN apt-get update && \
     apt-get install --no-install-recommends -y \
         wget=1.20.1-1.1 \
+        zip=3.0-11+b1 \
         unzip=6.0-23+deb10u1 \
         git=1:2.20.1-2+deb10u3 \
         nodejs=10.21.0~dfsg-1~deb10u1 \

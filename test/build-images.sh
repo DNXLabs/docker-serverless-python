@@ -2,7 +2,7 @@
 set -ex
 
 DOCKER_REPO=dnxsolutions/serverless-python
-DOCKER_TAG=dnx2
+DOCKER_TAG=dnx-local
 IMAGE_NAME=${DOCKER_REPO}:${DOCKER_TAG}
 
 if [ ${DOCKER_TAG} != "latest" ]
