@@ -1,22 +1,13 @@
-name: Lint
-
 on: [push]
-
+name: Lint
 jobs:
-
   lint:
-
-    name: hadolint
-
+    name: hadolint on pr
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v2
-
-    - name: hadolint
-      uses: hadolint/hadolint-action@v1.6.0
-      with:
-        dockerfile: ./3.8
+    - uses: actions/checkout@master
+    - name: hadolint on pr
+      uses: burdzwastaken/hadolint-action@master
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         HADOLINT_ACTION_DOCKERFILE_FOLDER: ./3.8
