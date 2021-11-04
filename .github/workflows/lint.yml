@@ -1,19 +1,12 @@
+on: pull_request
 name: Lint
-
-on: [push]
-
 jobs:
-
   lint:
-
-    name: hadolint
-
+    name: hadolint on pr
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@master
-
-    - name: hadolint
+    - name: hadolint on pr
       uses: burdzwastaken/hadolint-action@master
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
