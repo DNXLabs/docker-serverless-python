@@ -22,3 +22,9 @@ build:
 		--build-arg base_image=python:3.8-slim \
 		-t ${DOCKER_REPO}:3.8-${DOCKER_TAG} \
 		./3.8/.
+
+	# Python 3.9
+	docker build \
+		--build-arg base_image=python:3.9-slim \
+		-t ${DOCKER_REPO}:3.9-${DOCKER_TAG} \
+		./3.9/.
