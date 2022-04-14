@@ -3,7 +3,7 @@
 FROM python:3.8-slim-buster
 
 RUN apt-get update && \
-    apt-get install --no-install-recommends -y \
+    apt-get install -y \
         wget=1.20.1-1.1 \
         zip=3.0-11+b1 \
         unzip=6.0-23+deb10u2 \
