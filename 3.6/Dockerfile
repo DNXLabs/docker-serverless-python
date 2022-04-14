@@ -1,4 +1,4 @@
-# hadolint ignore=DL3008
+# hadolint ignore=DL3015
 
 FROM python:3.6-slim-buster
 

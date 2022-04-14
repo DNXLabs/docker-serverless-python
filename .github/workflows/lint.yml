@@ -19,4 +19,4 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         HADOLINT_ACTION_DOCKERFILE_FOLDER: ./3.8
       with:
-        ignore: DL3008
+        ignore: DL3015
