@@ -1,3 +1,5 @@
+# hadolint ignore=DL3008
+
 FROM python:3.6-slim-buster
 
 RUN apt-get update && \
