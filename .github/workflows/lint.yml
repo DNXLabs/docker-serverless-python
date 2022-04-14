@@ -18,3 +18,5 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         HADOLINT_ACTION_DOCKERFILE_FOLDER: ./3.8
+      with:
+        ignore: 'DL3015 DL4006 DL3008'
