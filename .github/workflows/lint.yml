@@ -1,23 +1,23 @@
-name: Lint
+# name: Lint
 
-on: [push]
+# on: [push]
 
-jobs:
+# jobs:
 
-  lint:
+#   lint:
 
-    name: hadolint
+#     name: hadolint
 
-    runs-on: ubuntu-latest
+#     runs-on: ubuntu-latest
 
-    steps:
-    - uses: actions/checkout@master
+#     steps:
+#     - uses: actions/checkout@master
 
-    - name: hadolint
-      uses: burdzwastaken/hadolint-action@master
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        HADOLINT_ACTION_DOCKERFILE_FOLDER: ./3.8
-      with:
-        ignore: 'DL3015,DL4006,DL3008'
-        no-fail: true
+#     - name: hadolint
+#       uses: burdzwastaken/hadolint-action@master
+#       env:
+#         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#         HADOLINT_ACTION_DOCKERFILE_FOLDER: ./3.8
+#       with:
+#         ignore: 'DL3015,DL4006,DL3008'
+#         no-fail: true
