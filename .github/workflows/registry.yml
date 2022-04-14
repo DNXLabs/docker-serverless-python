@@ -27,7 +27,7 @@ jobs:
           ECR_REGISTRY: public.ecr.aws
           ECR_REPOSITORY: v9i6s3d6/serverless-python
           DOCKER_REPOSITORY: dnxsolutions/serverless-python
-          IMAGE_TAG: dnx-${{ steps.get_tag.outputs.tag }}
+          IMAGE_TAG: ${{ steps.get_tag.outputs.tag }}
         run: |
           apk add docker
           aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws
