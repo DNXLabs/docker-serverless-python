@@ -1,4 +1,3 @@
-
 FROM python:3.6-slim-buster
 
 RUN apt-get update && \
@@ -11,7 +10,7 @@ RUN apt-get update && \
         npm=5.8.0+ds6-4+deb10u2 && \
     pip3 install --no-cache-dir --upgrade pip==20.1.1 && \
     npm install npm@latest -g && \
-    npm install -g serverless@3.12.0 && \
+    npm install -g serverless@3.19.0 && \
     apt-get -q -y clean && \
     rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/*
 
