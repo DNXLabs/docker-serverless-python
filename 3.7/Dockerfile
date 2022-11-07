@@ -10,7 +10,7 @@ RUN apt-get update && \
         npm=5.8.0+ds6-4+deb10u2 && \
     pip3 install --no-cache-dir --upgrade pip==20.1.1 && \
     npm install npm@latest -g && \
-    npm install -g serverless@3.19.0 && \
+    npm install -g serverless@3.24.1 && \
     apt-get -q -y clean && \
     rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/*
 
