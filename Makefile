@@ -26,6 +26,12 @@ build:
 		-t ${REPO}:3.9-${IMAGE_TAG} \
 		./3.9/.
 
+	# Python 3.10
+	docker build \
+		--build-arg base_image=python:3.10-slim \
+		-t ${REPO}:3.10-${IMAGE_TAG} \
+		./3.10/.
+
 push:
 	echo "Push specific tag/release"
 
@@ -40,3 +46,6 @@ push:
 
 	# Python 3.9
 	docker push ${REPO}:3.9-${IMAGE_TAG} 
+
+	# Python 3.10
+	docker push ${REPO}:3.10-${IMAGE_TAG} 
