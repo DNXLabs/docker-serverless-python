@@ -11,6 +11,7 @@ RUN apt-get update && \
     pip3 install --no-cache-dir --upgrade pip==20.1.1 && \
     npm install npm@latest -g && \
     npm install -g serverless@3.24.1 && \
+    npm install -g serverless-compose@2.4.0 &&\
     apt-get -q -y clean && \
     rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/*
 
