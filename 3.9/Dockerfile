@@ -9,15 +9,16 @@ RUN apt-get update && \
         curl \
         npm=5.8.0+ds6-4+deb10u2 && \
     pip3 install --no-cache-dir --upgrade pip==23.3.1 && \
-    npm install npm@7.0 -g && \
+    npm install npm@7.0.0 -g && \
     npm install -g serverless@3.36.0 && \
     npm install -g serverless-compose@2.4.0 &&\
     apt-get -q -y clean && \
     rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/*
 
 ARG APT_KEY_DONT_WARN_ON_DANGEROUS_USAGE=1
-RUN curl -sL https://deb.nodesource.com/setup_16.x | bash -
+RUN curl -sL https://deb.nodesource.com/setup_16.x | bash 
 RUN apt-get install -y nodejs
+
 
 WORKDIR /work
 
