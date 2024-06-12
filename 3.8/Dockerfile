@@ -16,7 +16,7 @@ RUN apt-get update && \
     rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/*
 
 ARG APT_KEY_DONT_WARN_ON_DANGEROUS_USAGE=1
-RUN curl -sL https://deb.nodesource.com/setup_16.x | bash
+RUN curl -sL https://deb.nodesource.com/setup_18.x | bash
 RUN apt-get install -y nodejs
 
 WORKDIR /work
