@@ -9,7 +9,7 @@ RUN apt-get update && \
         curl \
         ca-certificates \
         gnupg && \
-    pip3 install --no-cache-dir --upgrade pip==23.3.1 && \
+    pip3 install --no-cache-dir --upgrade pip==25.1.1 && \
     apt-get -q -y clean && \
     rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/*
 
