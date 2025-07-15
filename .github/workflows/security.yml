@@ -16,7 +16,7 @@ jobs:
         run: echo ::set-output name=docker_tag::$(echo ${GITHUB_REF} | cut -d'/' -f3)-${GITHUB_SHA}
 
       - name: Build the Docker image
-        run: docker build . --file ./3.8/Dockerfile --tag docker-terraform:${{ steps.vars.outputs.docker_tag }}
+        run: docker build . --file ./3.9/Dockerfile --tag docker-terraform:${{ steps.vars.outputs.docker_tag }}
 
       - name: Scan with Phonito Security
         uses: phonito/phonito-scanner-action@master
