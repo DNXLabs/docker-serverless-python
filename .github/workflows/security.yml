@@ -18,9 +18,15 @@ jobs:
       - name: Build the Docker image
         run: docker build . --file ./3.12/Dockerfile --tag serverless-python:${{ steps.vars.outputs.docker_tag }}
 
-      - name: Scan with Phonito Security
-        uses: phonito/phonito-scanner-action@master
+      - name: Run Trivy vulnerability scanner
+        uses: aquasecurity/trivy-action@master
         with:
-          image: serverless-python:${{ steps.vars.outputs.docker_tag }}
-          phonito-token: ${{ secrets.PHONITO_TOKEN }}
-          fail-level: HIGH
+          image-ref: serverless-python:${{ steps.vars.outputs.docker_tag }}
+          format: 'sarif'
+          output: 'trivy-results.sarif'
+
+      - name: Upload Trivy scan results to GitHub Security tab
+        uses: github/codeql-action/upload-sarif@v2
+        if: always()
+        with:
+          sarif_file: 'trivy-results.sarif'
