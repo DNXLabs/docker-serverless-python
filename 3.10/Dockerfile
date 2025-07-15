@@ -13,7 +13,6 @@ RUN apt-get update && \
     apt-get -q -y clean && \
     rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/*
 
-ARG APT_KEY_DONT_WARN_ON_DANGEROUS_USAGE=1
 RUN mkdir -p /etc/apt/keyrings && \
     curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg && \
     echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_20.x nodistro main" | tee /etc/apt/sources.list.d/nodesource.list && \
