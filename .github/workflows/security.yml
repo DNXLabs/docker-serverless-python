@@ -9,17 +9,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v4
 
       - name: Set tag var
         id: vars
-        run: echo ::set-output name=docker_tag::$(echo ${GITHUB_REF} | cut -d'/' -f3)-${GITHUB_SHA}
+        run: echo "docker_tag=$(echo ${GITHUB_REF} | cut -d'/' -f3)-${GITHUB_SHA}" >> $GITHUB_OUTPUT
 
       - name: Build the Docker image
-        run: docker build . --file ./3.9/Dockerfile --tag docker-terraform:${{ steps.vars.outputs.docker_tag }}
+        run: docker build . --file ./3.12/Dockerfile --tag serverless-python:${{ steps.vars.outputs.docker_tag }}
 
       - name: Scan with Phonito Security
         uses: phonito/phonito-scanner-action@master
         with:
-          image: docker-terraform:${{ steps.vars.outputs.docker_tag }}
+          image: serverless-python:${{ steps.vars.outputs.docker_tag }}
           phonito-token: ${{ secrets.PHONITO_TOKEN }}
+          fail-level: HIGH
