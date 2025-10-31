@@ -25,6 +25,12 @@ build:
 		--build-arg base_image=python:3.12-slim-bookworm \
 		-t ${REPO}:3.12-${IMAGE_TAG} \
 		./3.12/.
+
+	# Python 3.13
+	docker build \
+		--build-arg base_image=python:3.13-slim-bookworm \
+		-t ${REPO}:3.13-${IMAGE_TAG} \
+		./3.13/.
 push:
 	echo "Push specific tag/release"
 
@@ -39,3 +45,6 @@ push:
 
 	# Python 3.12
 	docker push ${REPO}:3.12-${IMAGE_TAG} 
+
+	# Python 3.13
+	docker push ${REPO}:3.13-${IMAGE_TAG} 
