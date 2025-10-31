@@ -32,6 +32,12 @@ docker build \
   -t ${DOCKER_REPO}:3.12-${DOCKER_TAG} \
   ..
 
+echo "Building Python 3.13..."
+docker build \
+  -f ../3.13/Dockerfile \
+  -t ${DOCKER_REPO}:3.13-${DOCKER_TAG} \
+  ..
+
 echo "All builds completed successfully!"
 
 # List the built images
