@@ -1,4 +1,4 @@
-FROM python:3.11-slim-bookworm
+FROM python:3.13-slim-bookworm
 
 RUN apt-get update && \
     apt-get install -y \
@@ -9,7 +9,7 @@ RUN apt-get update && \
         curl \
         ca-certificates \
         gnupg && \
-    pip3 install --no-cache-dir --upgrade pip  && \
+    pip3 install --no-cache-dir --upgrade pip && \
     apt-get -q -y clean && \
     rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/*
 
